@@ -19,6 +19,9 @@ repositories {
     mavenCentral()
 }
 
+val springDocVersion = "2.0.4"
+val mysqlConnectorVersion = "8.2.0"
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-security")
@@ -27,12 +30,14 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springDocVersion")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.springframework.security:spring-security-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    runtimeOnly("com.mysql:mysql-connector-j:8.2.0")
+    runtimeOnly("com.mysql:mysql-connector-j:$mysqlConnectorVersion")
 }
 
 kotlin {
